@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import {URL_API, doApiGet} from '../services/apiService';
 import CurrencyFieldComponent from './currencyFieldComponent';
+import SwapComponent from './swapComponent';
 
 export default function ExchangeComponent() {
 
@@ -57,6 +58,11 @@ export default function ExchangeComponent() {
         setAmount(e.target.value);
         setFromCurrencyfeildChanged(false);
     }
+
+    function handleSwap(){
+        setFromCurrency(toCurrency);
+        setToCurrency(fromCurrency);
+    }
     
 
     return (
@@ -68,7 +74,9 @@ export default function ExchangeComponent() {
             onChangeInput = {handleFromAmountChange}
             amount = {fromAmount}
             />
-            <div>=</div>
+           <SwapComponent
+                swapOptions = {handleSwap}
+           />
             <CurrencyFieldComponent
             currencyOptions = {currencyOptions}
             selectedCurrency = {toCurrency}
