@@ -10,10 +10,7 @@ export default function ExchangeComponent() {
     const [rate, setRate] = useState();
     const [amount, setAmount] = useState(1);
     const [fromCurrencyfeildChanged, setFromCurrencyfeildChanged] = useState(true);
-    console.log("rate: ",rate);
-    console.log("fromCurrency: ",fromCurrency);
-    console.log("toCurrency: ", toCurrency)
-
+ 
     let toAmount, fromAmount;
 
     if (fromCurrencyfeildChanged){
@@ -29,7 +26,9 @@ export default function ExchangeComponent() {
     }, []);
 
     useEffect(()=>{
-        updateApp();
+        if(fromCurrency != null && toCurrency != null){
+            updateApp();
+        }
     }, [fromCurrency, toCurrency]);
 
     const doApi = async() => {
@@ -43,6 +42,7 @@ export default function ExchangeComponent() {
     }
 
     const updateApp = async() => {
+       
         let url = URL_API;
         let data = await doApiGet(url);
         setRate(data.quotes[toCurrency]/data.quotes[fromCurrency]);
