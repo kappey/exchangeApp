@@ -7,13 +7,19 @@ export default function CurrencyFieldComponent(props) {
         selectedCurrency,
         onChangeCurrency,
         amount,
-        onChangeInput
+        onChangeInput,
+        onFocusField
     } = props
 
+    const myStyle ={
+        boxShadow: "none",
+        border: "1px solid 	#dcdcdc"
+    }
+
     return (
-        <div className="row mx-auto w-50">
-             <input min="1" type="number" className="form-control w-75" value={amount} onInput={onChangeInput}/>
-            <select className="form-control w-25" value={selectedCurrency} onChange={onChangeCurrency}>
+        <div className="d-flex justify-content-center">
+            <input style={myStyle} min="1" type="number" className="form-control" value={parseFloat(amount)} onFocus={onFocusField} onInput={onChangeInput}/>
+            <select className="btn btn-outline-warning dropdown-toggle" value={selectedCurrency} onChange={onChangeCurrency}>
                 {currencyOptions.map(option => (
                     <option value={option} key={option}>{option.substring('USD'.length)}</option>
                  ) )}

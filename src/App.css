@@ -1,5 +1,13 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;    
+  font-family: 'Abel', sans-serif;
+  background: "#fcfcfc"
+  /* font-family: 'Amatic SC', cursive; */
+  /* font-family: 'Yusei Magic', sans-serif; */
+
 }
 
 .App-logo {
