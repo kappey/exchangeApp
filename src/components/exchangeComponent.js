@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import {URL_API, doApiGet} from '../services/apiService';
 import CurrencyFieldComponent from './currencyFieldComponent';
+import ExchangeDetailsComponent from './exchangeDetailsComponent';
 import SwapComponent from './swapComponent';
 
 export default function ExchangeComponent() {
@@ -93,6 +94,9 @@ export default function ExchangeComponent() {
                 amount = {toAmount}
                 onFocusField = {() => {setAmount("")}}
                 />
+            </div>
+            <div>
+                <ExchangeDetailsComponent/>
             </div>
         </div>
     )

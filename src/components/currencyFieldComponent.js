@@ -9,7 +9,7 @@ export default function CurrencyFieldComponent(props) {
         amount,
         onChangeInput,
         onFocusField
-    } = props
+    } = props;
 
     const myStyle ={
         boxShadow: "none",

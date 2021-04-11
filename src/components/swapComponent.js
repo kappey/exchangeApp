@@ -16,6 +16,3 @@ export default function SwapComponent(props) {
         </div>
     )
 }
-
-// style={{background: "url(arrow-btn.png)"
-{/* <i style={{fontSize:"6em"}} className="fa fa-exchange"/> */}
