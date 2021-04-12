@@ -9,6 +9,7 @@ function App() {
       <HeaderComponent/>
       <main 
         style={{
+          
           backgroundImage: "url(currencyBG.jpg)",
           minHeight: "600px",
           backgroundRepeat: "no-repeat",

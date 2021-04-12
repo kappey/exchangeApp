@@ -1,5 +1,4 @@
 import React from 'react'
-import '../css/swapComponent.css'
 
 export default function SwapComponent(props) {
     const{
@@ -12,7 +11,7 @@ export default function SwapComponent(props) {
                 boxShadow: "none",
                 border: "none"
             }} 
-            onClick={swapOptions}><img src="arrow-btn-64.png" alt="two-rotate-arrows" className="spiningArrows"/></button>
+            onClick={swapOptions}><img src="arrow-btn-64.png" alt="two-rotate-arrows" className="spiningArrows imgRotate"/></button>
         </div>
     )
 }

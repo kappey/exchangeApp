@@ -11,10 +11,11 @@ export default function DetailsComponent(props) {
     } = props;
     
     return (
-        <div>
-            <h2 className="d-flex justify-content-center text-center pt-5">
-                You will get {parseFloat(toFieldAmount).toFixed(2)} {selectedToCurrency.substring('USD'.length)} <br/>
-                for {parseFloat(fromFieldAmount).toFixed(2)} {selectedFromCurrency.substring('USD'.length)}
+        <div className="mt-5">
+            <h2 style={{fontSize: "3em"}} className="d-flex justify-content-center text-center pt-5 text-warning">
+                {parseFloat(fromFieldAmount).toFixed(2)} {selectedFromCurrency.substring('USD'.length)}{'\u00A0'}{'\u00A0'}
+                <img src="arrow-64.png" alt="arrows"/>{'\u00A0'}{'\u00A0'}
+                {parseFloat(toFieldAmount).toFixed(2)} {selectedToCurrency.substring('USD'.length)}
             </h2>
             <div className="d-flex justify-content-center pt-5 text-warning">
                 <DateComponent/>

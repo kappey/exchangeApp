@@ -43,8 +43,7 @@ export default function ExchangeComponent() {
         setRate(data.quotes[currency[1]]);
     }
 
-    const updateApp = async() => {
-       
+    const updateApp = async() => { 
         let url = URL_API;
         let data = await doApiGet(url);
         setRate(data.quotes[toCurrency]/data.quotes[fromCurrency]);
@@ -67,14 +66,14 @@ export default function ExchangeComponent() {
     
     return (
         <div className="container">
-            <div className="d-flex justify-content-center col-sm pt-5 pb-3">
+            <div className="d-flex justify-content-center col-sm pt-1 pb-3">
                 <CurrencyFieldComponent
                 currencyOptions = {currencyOptions}
                 selectedCurrency = {fromCurrency}
                 onChangeCurrency = {e => setFromCurrency(e.target.value)}
                 onChangeInput = {handleFromAmountChange}
                 amount = {fromAmount}
-                onFocusField = {() => {setAmount("")}}
+                onFocusField = {() => {setAmount(0)}}
                 />
             </div>
             <div className="col-sm d-flex justify-content-center">

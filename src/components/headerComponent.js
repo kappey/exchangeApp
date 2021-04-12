@@ -3,7 +3,7 @@ import React from 'react'
 export default function HeaderComponent() {
 
     return (
-        <header style={{minHeight: 150}}>
+        <header>
             <h1 
             style={{
                 color:"#aaaaaa", 
@@ -12,7 +12,7 @@ export default function HeaderComponent() {
                 fontFamily: "'Amatic SC', cursive", 
                 fontSize: "8em"
             }}
-            >EX<a style={{color:"#f0ad4e"}}>CHANGE </a> CURRENCY</h1>
+            >EX<a className="text-warning">CHANGE </a> CURRENCY</h1>
         </header>
     )
 }
