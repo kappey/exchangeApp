@@ -6,7 +6,7 @@ export default function HeaderComponent() {
         <header style={{minHeight: 150}}>
             <h1 
             style={{
-                color:"#AAAAAA", 
+                color:"#aaaaaa", 
                 textAlign: "center", 
                 padding: "20px 0",
                 fontFamily: "'Amatic SC', cursive", 
