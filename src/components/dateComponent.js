@@ -19,8 +19,8 @@ export default function DateComponent() {
 
     return (
         <div>
-            <h4>{time}</h4>
-            <h4>{date}</h4>
+            <h4 style={{fontSize: "2em"}}>{time}</h4>
+            <h4 style={{fontSize: "2em"}}>{date}</h4>
         </div>
     )
 }
