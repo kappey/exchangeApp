@@ -3,7 +3,7 @@ import React from 'react'
 export default function HeaderComponent() {
 
     return (
-        <header>
+        <header className="md-h2">
             <h1 
             style={{
                 color:"#aaaaaa", 

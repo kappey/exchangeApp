@@ -13,6 +13,12 @@
   }
 }
 
+main{
+  min-height: 600px;
+  background-image: url("./currencyBG.jpg");
+  background-repeat: no-repeat;
+}
+
 @keyframes spin {
   from{
     transform: rotateX(0deg);
@@ -29,4 +35,15 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-duration: 7s;
+}
+
+@media only screen and (max-width: 500px){ 
+  .md-h2{
+    font-size: 0.7em;
+  }
+
+  main{
+    min-height: auto;
+    background-image: none;
+  }
 }
