@@ -12,18 +12,3 @@ export const doApiGet = async (_url) => {
     return err;
   }
 }
-
-// export const getCurrencyValue = async (_url, _currencyValue) => {
-//   try {
-//     let res = await fetch(_url, {
-//       quotes: _currencyValue
-//     });
-//     let data = await res.json();
-//     return data;
-//   }
-//   catch (err) {
-//     console.log(err);
-//     alert("Something went wrong, Please try again later")
-//     return err;
-//   }
-// }

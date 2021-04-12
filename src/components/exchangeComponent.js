@@ -1,34 +1,31 @@
 import {useEffect, useState} from 'react';
 import {URL_API, doApiGet} from '../services/apiService';
 import CurrencyFieldComponent from './currencyFieldComponent';
-import ExchangeDetailsComponent from './exchangeDetailsComponent';
+import DetailsComponent from './detailsComponent';
 import SwapComponent from './swapComponent';
 
 export default function ExchangeComponent() {
 
     const [currencyOptions, setCurrencyOptions] = useState([]);
-    const [fromCurrency, setFromCurrency] = useState();
-    const [toCurrency, setToCurrency] = useState();
+    const [fromCurrency, setFromCurrency] = useState('USDUSD');
+    const [toCurrency, setToCurrency] = useState('USDILS');
     const [rate, setRate] = useState();
     const [amount, setAmount] = useState(1);
     const [fromCurrencyfeildChanged, setFromCurrencyfeildChanged] = useState(true);
  
     let toAmount, fromAmount;
 
-    if (fromCurrencyfeildChanged && amount > 0){
+    if (fromCurrencyfeildChanged){
         fromAmount = amount;
         toAmount = amount * rate;
-    }else if (amount > 0){
+    }else{
         toAmount = amount;
         fromAmount = amount / rate;
-    }else{
-        toAmount = "";
-        fromAmount = "";
     }
 
     useEffect(()=>{
         doApi();
-    }, []);
+    } ,[]);
 
     useEffect(()=>{
         if(fromCurrency != null && toCurrency != null){
@@ -92,11 +89,15 @@ export default function ExchangeComponent() {
                 onChangeCurrency = {e => setToCurrency(e.target.value)}
                 onChangeInput = {handleToAmountChange}
                 amount = {toAmount}
-                onFocusField = {() => {setAmount("")}}
                 />
             </div>
             <div>
-                <ExchangeDetailsComponent/>
+                <DetailsComponent
+                selectedFromCurrency = {fromCurrency}
+                selectedToCurrency = {toCurrency}
+                fromFieldAmount = {fromAmount}
+                toFieldAmount = {toAmount}
+                />
             </div>
         </div>
     )
