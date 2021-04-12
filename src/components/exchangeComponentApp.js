@@ -4,7 +4,7 @@ import CurrencyFieldComponent from './currencyFieldComponent';
 import DetailsComponent from './detailsComponent';
 import SwapComponent from './swapComponent';
 
-export default function ExchangeComponent() {
+export default function ExchangeComponentApp() {
 
     const [currencyOptions, setCurrencyOptions] = useState([]);
     const [fromCurrency, setFromCurrency] = useState('USDUSD');
